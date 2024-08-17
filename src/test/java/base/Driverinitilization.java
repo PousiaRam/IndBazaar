@@ -47,6 +47,8 @@ public class Driverinitilization {
 
 		driver.get(baseURL);
 
+		driver.close();
+
 	}
 
 }
