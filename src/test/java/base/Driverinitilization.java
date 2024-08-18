@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -36,7 +37,7 @@ public class Driverinitilization {
 
 	}
 
-	@Test
+	@BeforeTest
 	public void driverSetup() {
 
 		String baseURL = prop.getProperty("baseURL");
@@ -47,7 +48,11 @@ public class Driverinitilization {
 
 		driver.get(baseURL);
 
-		driver.close();
+		driver.manage().window().maximize();
+		
+		
+
+		// driver.close();
 
 	}
 
